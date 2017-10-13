@@ -22,16 +22,27 @@
    #define ESW_USE_CHRONO
    typedef std::chrono::time_point<std::chrono::steady_clock> time_sec_t;
   #else // Older version of C++.
-    #define ESW_USE_CLOCK_GETTIME
-    typedef timespec timeinfo;
-    typedef double time_sec_t;
+    #ifdef CLOCK_PROCESS_CPUTIME_ID
+      #define ESW_USE_CLOCK_GETTIME
+      typedef timespec timeinfo;
+      typedef double time_sec_t;
+    #else // have to use "clock()"
+      #define ESW_USE_CLOCK
+      typedef double time_sec_t;
+    #endif
   #endif // Checking C++ version
 #else // we're using C.
   #if __STDC_VERSION__ >= 199901L // Are we using C99?
     #define ESW_USE_CLOCK
   #else // We're using an older version of C.
-    #define ESW_USE_CLOCK_GETTIME
-    typedef struct timespec timeinfo;
+    #ifdef CLOCK_PROCESS_CPUTIME_ID
+      #define ESW_USE_CLOCK_GETTIME
+      typedef timespec timeinfo;
+      typedef double time_sec_t;
+    #else // have to use "clock()"
+      #define ESW_USE_CLOCK
+      typedef double time_sec_t;
+    #endif
   #endif
     typedef double time_sec_t;
 #endif
