@@ -1,7 +1,9 @@
 /////////////////////////////
 // Simple timing routines. //
-// ESW 2017-10-12          //
-/////////////////////////////
+// ESW 2017-10-12          //////////////////
+// This header is maintained at            //
+// https://github.com/weinbe2/timer_header //
+/////////////////////////////////////////////
 
 // Notes: You need to compile with the library flag '-lrt'.
 // These routines can be used to time the number of seconds

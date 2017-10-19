@@ -3,6 +3,9 @@ A single header file that handles timing in both C and C++.
 
 Timing routines, ESW 2017.
 
+This repository lives online on github at:
+https://github.com/weinbe2/timer_header
+
 Just #include the file "timer.h", link against the library 'rt'
 (that is, add -lrt to your compile string), and go for it!
 
@@ -26,7 +29,10 @@ in C++ since (2) C doesn't support pass by reference.
 ## Testing/Running
 
 These routines have been tested on a laptop with Ubuntu 14.04.5 LTS
-using various compilers and versions of the standard:
+using various compilers and versions of the standard. It's also
+been tested informally in Mac OS X.
+
+Ubuntu tests:
 
 ### gcc version 4.8.4 
 

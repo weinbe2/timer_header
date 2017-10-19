@@ -1,7 +1,9 @@
 //////////////////////////////////////
 // A test demo for timing routines. //
-// ESW 2017-10-12                   //
-//////////////////////////////////////
+// ESW 2017-10-12                   /////////
+// This test code is maintained at         //
+// https://github.com/weinbe2/timer_header //
+/////////////////////////////////////////////
 
 #include "stdio.h"
 #include "stdlib.h"

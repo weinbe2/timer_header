@@ -1,5 +1,8 @@
 Timing routines, ESW 2017.
 
+This repository lives online on github at:
+https://github.com/weinbe2/timer_header
+
 Just #include the file "timer.h", link against the library 'rt'
 (that is, add -lrt to your compile string), and go for it!
 
@@ -21,9 +24,12 @@ passed as a pointer to (1) avoid the overhead of a copy constructor
 in C++ since (2) C doesn't support pass by reference.
 
 These routines have been tested on a laptop with Ubuntu 14.04.5 LTS
-using various compilers and versions of the standard:
+using various compilers and versions of the standard. It's also
+been tested informally in Mac OS X.
 
-** gcc version 4.8.4 **
+** Ubuntu Tests **
+
+*** gcc version 4.8.4 ***
 
 gcc timer_test_c.c -lrt -o timer_test_c
 gcc -std=c99 timer_test_c.c -lrt -o timer_test_c # C99
@@ -31,7 +37,7 @@ gcc -std=gnu99 timer_test_c.c -lrt -o timer_test_c # C99 w/ GNU extensions
 gcc -std=c11 timer_test_c.c -lrt -o timer_test_c # C11
 gcc -std=gnu11 timer_test_c.c -lrt -o timer_test_c # C11 w/ GNU extensions
 
-** gcc version 5.4.1 **
+*** gcc version 5.4.1 ***
 
 gcc-5 timer_test_c.c -lrt -o timer_test_c
 gcc-5 -std=c99 timer_test_c.c -lrt -o timer_test_c # C99
@@ -39,13 +45,13 @@ gcc-5 -std=gnu99 timer_test_c.c -lrt -o timer_test_c # C99 w/ GNU extensions
 gcc-5 -std=c11 timer_test_c.c -lrt -o timer_test_c # C11
 gcc-5 -std=gnu11 timer_test_c.c -lrt -o timer_test_c # C11 w/ GNU extensions
 
-** g++ version 4.8.4 **
+*** g++ version 4.8.4 ***
 
 g++ timer_test.cpp -lrt -o timer_test
 g++ -std=c++11 timer_test.cpp -lrt -o timer_test # C++11
 g++ -std=c++1y timer_test.cpp -lrt -o timer_test # C++14
 
-** g++ version 5.4.1 **
+*** g++ version 5.4.1 ***
 
 g++-5 timer_test.cpp -lrt -o timer_test
 g++-5 -std=c++11 timer_test.cpp -lrt -o timer_test # C++11
